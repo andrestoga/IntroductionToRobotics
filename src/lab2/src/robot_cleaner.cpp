@@ -41,14 +41,20 @@ void move(double speed, double distance, bool isForward)
 	vel_msg.angular.y = 0;
 	vel_msg.angular.z = 0;
 
-	double t = distance / speed;
+	// double t = distance / speed;
 
 	//Get current time
-	ros::WallTime start = ros::WallTime::now();
+	ros::WallTime t0 = ros::WallTime::now();
 
 	//Publish the velocity on the /cmd_vel topic during certain time
-	while( (ros::WallTime::now().sec - start.sec) <= t )
+	// while( (ros::WallTime::now().sec - start.sec) <= t )
+	// {
+	// 	velocity_publisher.publish(vel_msg);
+	// }
+
+	while(true)
 	{
 		velocity_publisher.publish(vel_msg);
+		double distance = speed * (2);
 	}
 }
