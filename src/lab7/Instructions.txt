@@ -1,0 +1,16 @@
+roscore
+
+rosparam set use_sim_time true
+
+//Run here ~/CSE180/src/robotics_course/urdfs
+rosrun gazebo_ros  gazebo factory_wo_p3at.sdf
+
+//Run here ~/CSE180/src/robotics_course/urdfs
+rosrun gazebo_ros spawn_model -file p3at_amr.urdf -urdf -z 1  -x 0 -y 0 -model pioneer3at
+
+//Run here ~/CSE180/src/robotics_course/launch_files
+roslaunch run_full_simulation.launch
+
+//Run your node
+
+killall -9 gzserver

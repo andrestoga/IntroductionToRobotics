@@ -1,0 +1,10 @@
+<launch>
+  <node pkg="move_base" type="move_base" name="move_base_node">
+	<param name="controller_frequency" value="20"/>
+	<param name="TrajectoryPlannerROS/yaw_goal_tolerance" value="7"/>
+	<param name="global_costmap/publish_frequency" value="10"/>
+	<param name="TrajectoryPlannerROS/meter_scoring" value="true"/>
+	<param name="global_costmap/transform_tolerance" value="0.1"/>
+	<param name="/move_base_node/local_costmap/footprint" value="[ [0.5, 0.5], [-0.5, 0.5], [-0.5, -0.5], [0.5, -0.5] ]"/>
+  </node>
+ </launch>
